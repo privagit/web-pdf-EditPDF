@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+ 
+<body>
+    <div class="">
+        <div id="tab">
+            <div class=" bg-[#8FD9A8] h-[80px] content-center drop-shadow-xl">
+                <!-- <p class="text-xl text-white mx-6 font-bold">Priva PDF</p> -->
+                <img class="mx-8" src="../image/logo_company.png" alt="">
+            </div>
+        </div>
+        <div class="grid grid-cols-12 gap-4 relative">
+ 
+            <div class="col-span-6 relative xl:left-[-50px] xl:top-[-100px] min-[1920px]:left-[-100px] min-[1920px]:top-[0px]"
+                id="button">
+                <div class="text-center text-[#112049] mt-[200px]">
+                    <div class="xl:text-6xl min-[1920px]:text-8xl font-bold relative xl:right-14">PRIVA</div>
+                    <div
+                        class="xl:text-6xl min-[1920px]:text-8xl font-bold relative xl:left-24 min-[1920px]:left-[170px]">
+                        PDF</div>
+                </div>
+                <div class="btn_uploadImage text-center mt-5">
+                    <input type="file" id="uploadPDF" name="uploadPDF" style="display: none;">
+ 
+                    <button
+                        class="relative xl:left-[180px] xl:w-[250px] xl:h-[70px] min-[1920px]:left-[300px] min-[1920px]:w-[350px] min-[1920px]:h-[100px] cursor-pointer flex justify-between bg-[#D2E69C] px-3 py-2 rounded-full text-[#112049] tracking-wider shadow-xl hover:bg-[#A9B97D] hover:scale-105 duration-500 hover:ring-1 font-mono"
+                        id="getUploadedPDF">
+                        <div class="xl:text-lg xl:m-4 2xl:text-2xl 2xl:m-6">
+                            Upload PDF
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="w-5 h-5 animate-bounce xl:text-lg xl:m-5 2xl:text-2xl 2xl:m-8">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"></path>
+                        </svg>
+                    </button>
+ 
+ 
+                    <!-- <button class="btn btn-warning xl:w-[200px] xl:h-[30px] 2xl:w-[400px] 2xl:h-[100px] xl:text-xl 2xl:text-3xl drop-shadow-md rounded-full text-white mt-5" id="getUploadedPDF">
+                            Upload PDF
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </button> -->
+                </div>
+            </div>
+ 
+            <div class="col-span-6 relative xl:left-[-70px] xl:top-[-50px] min-[1920px]:left-[-50px] min-[1920px]:top-[20px]"
+                id="button">
+                <div class="relative xl:top-[-4.125rem] xl:left-[-12.5rem] min-[1920px]:left-[-5rem]">
+                    <img class="absolute xl:top-[10.4rem] xl:left-[28.4375rem] xl:w-[5.5rem] min-[1920px]:w-[9.5rem] z-10"
+                        src="../image/Work_from_home-modified(1).png" alt="">
+                    <div
+                        class="xl:h-[0.125rem] xl:w-[1.6875rem] bg-black absolute xl:top-[13.125rem] xl:left-[31.25rem] min-[1920px]:w-[3.5rem] min-[1920px]:h-[0.25rem] min-[1920px]:left-[33.5rem] min-[1920px]:top-[15rem] origin-left minute">
+                    </div>
+                    <div
+                        class="xl:h-[0.125rem] xl:w-[1.25rem] bg-black absolute xl:top-[13.125rem] xl:left-[31.25rem] min-[1920px]:w-[3rem] min-[1920px]:h-[0.25rem] min-[1920px]:left-[33.5rem] min-[1920px]:top-[15rem] origin-left hour">
+                    </div>
+                </div>
+ 
+                <div class="relative xl:top-[1rem] xl:left-[1rem] min-[1920px]:left-[10.2rem] min-[1920px]:top-[12rem]">
+                    <div
+                        class="eyes_animate absolute xl:w-[0.375rem] xl:h-[0.5rem] min-[1920px]:w-[0.675rem] min-[1920px]:h-[0.8rem] xl:top-[17.5625rem] xl:left-[15rem] rounded-full bg-[#5F372A]">
+                    </div>
+                    <div
+                        class="eyes_animate absolute xl:w-[0.375rem] xl:h-[0.5rem] min-[1920px]:w-[0.675rem] min-[1920px]:h-[0.8rem] xl:top-[17.5625rem] xl:left-[16.25rem] min-[1920px]:left-[17.25rem] rounded-full bg-[#5F372A]">
+                    </div>
+                </div>
+                <div
+                    class="absolute xl:top-[5.625rem] xl:left-[-11.25rem] min-[1920px]:top-[22rem] min-[1920px]:left-[-5rem]">
+                    <div
+                        class="z-10 absolute xl:top-[17.5rem] xl:left-[18.75rem] rotate-[15deg] xl:text-xl min-[1920px]:text-3xl text-[#5F372A] catSleeping">
+                        Z</div>
+                    <div
+                        class="z-10 absolute xl:top-[17.5rem] xl:left-[18.75rem] rotate-[15deg] xl:text-xl min-[1920px]:text-3xl text-[#5F372A] catSleeping">
+                        Z</div>
+                    <div
+                        class="z-10 absolute xl:top-[17.5rem] xl:left-[18.75rem] rotate-[15deg] xl:text-xl min-[1920px]:text-3xl text-[#5F372A] catSleeping">
+                        Z</div>
+                </div>
+                <img class="xl:w-[37.5rem] min-[1920px]:w-[60rem]" src="../image/Work_from_home-modified(4).png" alt="">
+ 
+            </div>
+        </div>
+ 
+        <div class="xl:mt-[-200px] min-[1920px]:mt-[-250px]">
+            <img class="w-full" src="../image/Footter(2).png" alt="">
+            <img class="xl:w-24 xl:mt-[-16rem] xl:ml-[10rem] min-[1920px]:w-36 min-[1920px]:mt-[-350px] min-[1920px]:ml-[15rem] rotate-[-25deg]"
+                src="../image/file.png" alt="">
+        </div>
+ 
+        <div id="target"
+            class="absolute 2xl:top-[750px] 2xl:left-[210px] 2xl:rotate-[80deg] xl:top-[480px] xl:left-[160px] xl:rotate-[80deg] xl:w-[70px] 2xl:w-[150px] hidden">
+            <img src="../image/sent.png" alt="">
+        </div>
+ 
+    </div>
+    </div>
+ 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/konva@9.3.12/konva.min.js"></script>
+    <script src="./pdf-lib/pdf-lib.min.js"></script>
+    <script src="./pdf-lib/download.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="/js/swalalert2.js"></script> -->
+ 
+ 
+    <script src="../script/pdf_upload.js"></script>
+</body>
+ 
+</html>

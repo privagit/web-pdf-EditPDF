@@ -1,0 +1,97 @@
+.image-tab {
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+    display: block;
+    border: 1px solid #d1d1d1;
+    /* เส้นขอบสีขาวสำหรับแท็บทั่วไป */
+    border-radius: 5px;
+    /* มุมโค้งของเส้นขอบ */
+    padding: 2px;
+    /* เพิ่มพื้นที่ภายในแท็บ */
+    margin: 5px;
+    /* ระยะห่างระหว่างแท็บ */
+}
+
+.image-tab.selected-tab {
+    color: #ffffff;
+    background-color: #d1d1d1;
+    /* สีพื้นหลังสำหรับแท็บที่เลือก */
+}
+
+.pdf-page {
+    display: block;
+    margin-bottom: 20px;
+    /* เว้นระยะหน้า */
+    box-shadow: 0px 0px 5px #d1d1d1;
+    /* เพิ่มเงาให้กรอบรูป */
+    border-radius: 5px;
+    /* กำหนดมุมของกรอบรูป */
+}
+
+.resize-drag {
+    /* Initial state without border */
+    border: 2px dashed transparent;
+}
+
+.resize-drag.resizing {
+    /* Border style when resizing */
+    border-color: #d1d1d1;
+}
+
+.resize-drag:hover {
+    /* Border style when resizing */
+    border-color: #d1d1d1;
+}
+
+.resize-drag.dragging {
+    /* Border style when dragging */
+    border-color: #d1d1d1;
+}
+
+.modal-overlay {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.modal-overlay.show {
+  opacity: 1;
+}
+/* Modal Content Transition */
+.modal-content {
+  transform: scale(0.9);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.modal-content.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.saved-signatures {
+ /* Optional: add border for better visibility */
+        padding: 10px; /* Optional: add padding */
+        display: flex;
+        flex-wrap: wrap; /* Wrap images to next line */
+    }
+
+    .signature-wrapper {
+        width: 50%; /* 50% of container width for 2 images per row */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        padding: 5px;
+         /* Add border around the wrapper */
+        /* Optional: add shadow for better visibility */
+    }
+
+    .signature-wrapper img {
+        width: 100%; /* Make image fill the wrapper */
+        height: 115px; /* Fixed height for each image */
+        object-fit: cover; /* Cover the entire area of the image */
+        border: 2px solid #d1d1d1; /* Add border around the image */
+        border-radius: 5px;
+    }
+
+    .signature-wrapper img:hover {
+
+        border: 2px solid #112049; /* Add border around the image */
+
+    }
