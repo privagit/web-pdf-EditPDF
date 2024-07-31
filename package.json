@@ -1,6 +1,23 @@
 {
+  "name": "pdfjs_basic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
-    "multer": "^1.4.5-lts.1"
+    "html2canvas-pro": "^1.5.6",
+    "nodemon": "^3.1.4",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "daisyui": "^4.12.10",
+    "tailwindcss": "^3.4.4"
   }
 }
