@@ -23,5 +23,26 @@ $(document).ready(function () {
     reader.readAsDataURL(file);
   });
 
- 
+  const elements = document.querySelectorAll(".eyes_animate");
+
+  elements.forEach((element) => {
+    function startAnimation() {
+      element.style.animation = "eyes 0.2s linear";
+      element.addEventListener(
+        "animationend",
+        () => {
+          element.style.animation = "none";
+          setTimeout(startAnimation, 5000); // Delay 5 seconds
+        },
+        { once: true }
+      );
+    }
+
+    startAnimation();
+
+    const catSleepingElements = document.querySelectorAll(".catSleeping");
+    catSleepingElements.forEach((element, index) => {
+      element.style.setProperty("--animation-delay", `${index * 1}s`); // เพิ่มค่า delay เป็น 1 วินาที
+    });
+  });
 });
