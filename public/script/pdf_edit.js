@@ -426,9 +426,16 @@ $(document).ready(function () {
         }
     });
 
+    $(document).on('click', 'canvas', function() {
+      
+        $(".resize-drag").removeClass('selected');
+        imageId = null;
+    })
+
     //*---------------------------------------- PDF ----------------------------------------*
     //* Download ไฟล์ PDF
     $('#download-pdf').on('click', async function () {
+        $(".resize-drag").removeClass("selected");
         const { PDFDocument } = PDFLib;
         const pdfDoc = await PDFDocument.create();
         const divs = document.querySelectorAll('div[id^="page-"]');

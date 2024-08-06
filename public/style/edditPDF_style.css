@@ -36,7 +36,8 @@
     overflow: hidden;
 }
 .resize-drag.selected{
-    border: 4px solid #d1d1d1 ;
+    border: 2px dashed #112049 ;
+    padding: 5px;
 }
 
 .resize-drag.resizing {
