@@ -161,7 +161,7 @@ function handleFiles(files, pageNumber) {
                     img.style.height = img.height / 2 + 'px';// ความสูงของรูปภาพ
 
                     // Set a unique id for the img element
-                    let imageId = `image-${Date.now()}`;
+                    let imageId = `image-${imageCounter}`;
                     img.id = imageId;
                     img.className = 'resize-drag';
                     
@@ -173,9 +173,6 @@ function handleFiles(files, pageNumber) {
                         container.appendChild(img);
 
                     // เลือก container ที่ต้องการเพิ่มรูปภาพ
-
-
-                    console.log('Image imported and added to PDF container via drag and drop');
                 };
                 img.src = e.target.result;
             };
@@ -389,6 +386,44 @@ $(document).ready(function () {
             // Call importImage with the determined pageNumber and pass event object
             importImage(pageNumber, event);
         });
+    });
+
+    //* Delete Image
+    let imageId = null;
+
+    $(document).on('click', "[id^='image-']", function() {
+        // เก็บ id ของ element ที่ถูกคลิก
+        imageId = $(this).attr('id');
+
+        $(".resize-drag").removeClass("selected");
+        $(this).addClass("selected");
+        
+    });
+    
+    //* Delete Image Click Backspace 
+    $(document).keydown(function(event) {
+        // ตรวจสอบว่าปุ่ม Delete หรือ Backspace ถูกกด
+        if (event.key === 'Delete' || event.key === 'Backspace') {
+            if (imageId) {
+                // ลบภาพที่มี id ที่ตรงกับ imageId
+                $('#' + imageId).remove();
+                // ล้างค่า imageId หลังจากลบ
+                imageId = null;
+            }
+        }
+
+
+    });
+
+    //* Delete Image Click Image Delete
+    $(document).on('click', "#imageDelete", function() {
+        // เก็บ id ของ element ที่ถูกคลิก
+        if (imageId) {
+            // ลบภาพที่มี id ที่ตรงกับ imageId
+            $('#' + imageId).remove();
+            // ล้างค่า imageId หลังจากลบ
+            imageId = null;
+        }
     });
 
     //*---------------------------------------- PDF ----------------------------------------*
