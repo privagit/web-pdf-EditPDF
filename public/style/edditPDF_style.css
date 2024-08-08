@@ -42,7 +42,7 @@
 
 .resize-drag.resizing {
     /* Border style when resizing */
-    border-color: #d1d1d1;
+    border-color: #112049;
 }
 
 /* .resize-drag:hover { */
@@ -52,7 +52,7 @@
 
 .resize-drag.dragging {
     /* Border style when dragging */
-    border-color: #d1d1d1;
+    border-color: #112049;
 }
 
 .modal-overlay {
@@ -92,7 +92,7 @@
         width: 100%; /* Make image fill the wrapper */
         height: 115px; /* Fixed height for each image */
         object-fit: cover; /* Cover the entire area of the image */
-        border: 2px solid #d1d1d1; /* Add border around the image */
+        border: 2px solid #112049; /* Add border around the image */
         border-radius: 5px;
     }
 
