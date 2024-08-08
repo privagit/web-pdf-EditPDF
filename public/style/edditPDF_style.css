@@ -45,7 +45,10 @@
     border-color: #d1d1d1;
 }
 
-
+/* .resize-drag:hover { */
+    /* Border style when resizing */
+    /* border-color: #d1d1d1;
+} */
 
 .resize-drag.dragging {
     /* Border style when dragging */
