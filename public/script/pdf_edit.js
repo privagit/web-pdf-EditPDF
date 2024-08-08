@@ -526,7 +526,7 @@ $(document).ready(function () {
     // เพิ่มอีเวนต์เพื่อเปลี่ยนรูปแบบเมื่อมีการลากไฟล์เข้ามาในพื้นที่ drop-area
     ['dragenter', 'dragover'].forEach(eventName => {
         dropArea.addEventListener(eventName, () => {
-            dropArea.style.backgroundColor = '#112049';
+            dropArea.style.backgroundColor = '#f0f0f0';
         }, false);
     });
 
