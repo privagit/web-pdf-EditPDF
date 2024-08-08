@@ -31,7 +31,7 @@
 
 .resize-drag {
     /* Initial state without border */
-    border: 2px dashed #112049;
+    border: 2px dashed transparent;
     position: absolute;
     overflow: hidden;
 }
@@ -52,7 +52,7 @@
 
 .resize-drag.dragging {
     /* Border style when dragging */
-    border-color: #d1d1d1;
+    border-color: #112049;
 }
 
 .modal-overlay {
