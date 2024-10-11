@@ -440,10 +440,9 @@ $(document).ready(function () {
         const pdfDoc = await PDFDocument.create();
         const divs = document.querySelectorAll('div[id^="page-"]');
         const fileName = sessionStorage.getItem('FileName');
-        const canvases = [];
         
         // แสดง SweetAlert2 เริ่มต้น
-         Swal.fire({
+        Swal.fire({
             title: "กำลังดาวน์โหลด PDF",
             timerProgressBar: true,
             html: "<div>กรุณารอสักครู่...<b>0%</b></div>",
@@ -452,49 +451,45 @@ $(document).ready(function () {
             },
         });
     
-        // Convert divs to Canvas and store in array
+        // แปลง div แต่ละตัวเป็นภาพและเพิ่มใน PDF
         for (let i = 0; i < divs.length; i++) {
             const div = divs[i];
+            
+            // แปลง div เป็นภาพ PNG โดยตรง
             const canvas = await html2canvas(div, {
-                scale: 3,
+                scale: 3,  // เพิ่มคุณภาพของภาพ
             });
-            canvases.push(canvas);
-    
-            // Update progress after each canvas is processed
+        
+            // แปลง canvas เป็น URL ของภาพในรูปแบบ PNG
+            const imgDataUrl = canvas.toDataURL('image/png', 1); // คุณภาพสูง
+        
+            // อัปเดตความก้าวหน้าในการสร้าง PDF
             const progress = Math.round(((i + 1) / divs.length) * 100);
             Swal.getPopup().querySelector('b').textContent = `${progress}%`;
-        }
-    
-        // Add Canvas to PDF
-        for (let i = 0; i < canvases.length; i++) {
-            const canvas = canvases[i];
-            const imgDataUrl = canvas.toDataURL('image/png', 1); // High quality
+        
+            // แปลงข้อมูลภาพเป็น ArrayBuffer เพื่อนำไปใช้งานต่อ
+            const imgData = await fetch(imgDataUrl).then(res => res.arrayBuffer());
+            const img = await pdfDoc.embedPng(imgData);
+        
+            // กำหนดขนาดและเพิ่มภาพใน PDF
             const pageWidth = canvas.width;
             const pageHeight = canvas.height;
             const page = pdfDoc.addPage([pageWidth, pageHeight]);
-    
-            const imgData = await fetch(imgDataUrl).then(res => res.arrayBuffer());
-            const img = await pdfDoc.embedPng(imgData);
-    
-            // Draw image on PDF page
+        
+            // วางภาพลงในหน้า PDF
             page.drawImage(img, {
                 x: 0,
                 y: 0,
                 width: pageWidth,
                 height: pageHeight,
             });
-    
-            // // Update progress
-            // const progress = Math.round(((i + 1) / canvases.length) * 100);
-            // // Update SweetAlert2 with progress
-            // Swal.getPopup().querySelector("b").textContent = `Progress: ${progress}%`;
         }
-    
+        
         // Save PDF and download
         const pdfBytes = await pdfDoc.save();
         download(pdfBytes, fileName, "application/pdf");
     
-        // Hide SweetAlert2 when done
+        // แสดงข้อความสำเร็จ
         Swal.fire({
             title: 'ดาวน์โหลดสำเร็จ',
             icon: 'success',
@@ -503,9 +498,11 @@ $(document).ready(function () {
             sessionStorage.removeItem('uploadedPDF');
             sessionStorage.removeItem('FileName');
     
+            // เปลี่ยนเส้นทางกลับไปยัง URL เริ่มต้น
             window.location.href = 'http://localhost:5000/';
         });
     });
+    
     
     
     //* Cancel ไฟล์ PDF
